@@ -13,7 +13,7 @@ app_sess = sess.create_session(app)
 
 
 
-@app.get('/static/<filePath:Path>')
+@app.get('/static/<filePath:path>')
 def static(filePath):
     return static_file(filePath, root='./static')
 

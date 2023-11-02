@@ -21,10 +21,10 @@ def list():
     
     auth.check_login()
     
-    booklist = connection.query(Books.name,
+    bookList = connection.query(Books.name,
                                 Books.volume, Books.author,
                                 Books.publisher, Books.memo,
                                 Books.id_)\
             .filter(Books.delFlg == False).all()
     headers = ['書名', '巻数', '著者', '出版社', 'メモ', '操作']
-    return template('list.html', booklist=booklist, headers=headers)
+    return template('list.html', bookList=bookList, headers=headers)
